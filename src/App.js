@@ -8,6 +8,8 @@ import PrivateRoute from './routes/PrivateRoute'
 import PublicRoute from './routes/PublicRoute'
 import { Register } from './components/Register';
 import {APIURL, APIKey} from './constants'
+import { ChangePassword } from './components/ChangePassword';
+import { UpdatePassword } from './components/UpdatePassword';
 
 export const App = () => {
 
@@ -64,7 +66,9 @@ export const App = () => {
     <Router>
         <PublicRoute path = "/login" exact component = {Login} />
         <PublicRoute path = "/register" exact component = {Register} />
+        <PublicRoute path = "/update_password" exact component = {UpdatePassword} />
         <PrivateRoute path = "/" exact component = {Content} />
+        <PrivateRoute path = "/change_password" exact component = {ChangePassword} />
 
         {/* <SelectedSubjectProvider>
           <SubjectsProvider>

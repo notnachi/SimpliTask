@@ -36,7 +36,7 @@ export const AddSubject = ({shouldShow = false}) => {
                 className="add-project__name"
                 data-testid="project-name"
                 type="text"
-                placeholder="Name your project"
+                placeholder="Enter Subject Name"
             />
             <button
                 className="add-project__submit"
@@ -73,7 +73,7 @@ export const AddSubject = ({shouldShow = false}) => {
             role="button"
             tabIndex={0}
         >
-            Add Project
+            Add Subject
         </span>
     </div>
     )

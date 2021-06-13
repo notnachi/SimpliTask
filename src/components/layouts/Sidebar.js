@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import {
     FaChevronDown,
-    FaInbox,
-    FaRegCalendarAlt,
+    FaCalendarDay,
+    FaCalendarWeek,
     FaRegCalendar,
+    FaCalendarAlt
   } from 'react-icons/fa';
 
 import {useSelectedSubjectValue} from '../../context'
@@ -19,27 +20,6 @@ export const Sidebar = () => {
     return (
         <div className="sidebar" data-testid="sidebar">
             <ul className="sidebar__generic">
-                {/* <li
-                data-testid="inbox"
-                className={active === 'inbox' ? 'active' : undefined}
-                >
-                <div
-                    data-testid="inbox-action"
-                    aria-label="Show inbox tasks"
-                    tabIndex={0}
-                    role="button"
-                    onClick={() => {
-                    setActive('inbox');
-                    setSelectedSubject('INBOX');
-                    }}
-
-                >
-                    <span>
-                    <FaInbox />
-                    </span>
-                    <span>Inbox</span>
-                </div>
-                </li> */}
                 <li
                 data-testid="today"
                 className={active === 'today' ? 'active' : undefined}
@@ -58,6 +38,27 @@ export const Sidebar = () => {
                     <FaRegCalendar />
                     </span>
                     <span>Today</span>
+                </div>
+                </li>
+                <li
+                data-testid="inbox"
+                className={active === 'tomorrow' ? 'active' : undefined}
+                >
+                <div
+                    data-testid="inbox-action"
+                    aria-label="Show inbox tasks"
+                    tabIndex={0}
+                    role="button"
+                    onClick={() => {
+                    setActive('tomorrow');
+                    setSelectedSubject('TOMORROW');
+                    }}
+
+                >
+                    <span>
+                    <FaCalendarDay />
+                    </span>
+                    <span>Tomorrow</span>
                 </div>
                 </li>
                 <li
@@ -81,9 +82,29 @@ export const Sidebar = () => {
                     }}
                 >
                     <span>
-                    <FaRegCalendarAlt />
+                    <FaCalendarWeek />
                     </span>
                     <span>Next 7 days</span>
+                </div>
+                </li>
+                <li
+                data-testid="today"
+                className={active === 'today' ? 'active' : undefined}
+                >
+                <div
+                    data-testid="today-action"
+                    aria-label="Show today's tasks"
+                    tabIndex={0}
+                    role="button"
+                    onClick={() => {
+                    setActive('today');
+                    setSelectedSubject('ALL_TASKS');
+                    }}
+                >
+                    <span>
+                    <FaCalendarAlt />
+                    </span>
+                    <span>All Tasks</span>
                 </div>
                 </li>
             </ul>

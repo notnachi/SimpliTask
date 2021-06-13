@@ -1,12 +1,13 @@
 export const collatedTasks = [
-    { key: 'INBOX', name: 'Inbox' },
+    { key: 'TOMORROW', name: 'Tomorrow' },
     { key: 'TODAY', name: 'Today' },
     { key: 'NEXT_7', name: 'Next 7 Days' },
+    { key: 'ALL_TASKS', name: 'All Tasks' },
   ];
 
-export const subjects_table = 'subjects';
+export const subjects_table = '';
 
-export const tasks_table = 'tasks';
+export const tasks_table = '';
 
 export const APIURL = ''
 

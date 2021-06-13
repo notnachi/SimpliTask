@@ -43,6 +43,9 @@ export const Tasks = () => {
         document.title = `${subjectName}: Todoist`;
       });
     
+      const label_style = {
+          "marginLeft" : "10px"
+      }
     
 
     return (
@@ -57,6 +60,7 @@ export const Tasks = () => {
                     : <>
                         <Checkbox id={task.task_id} setArchivedTaskID = {setArchivedTaskID} taskDesc={task.task_desc} />
                         <span>{task.task_desc}</span>
+                        <span className="badge badge-info float-right" style = {label_style}>{task.date}</span>
                     </>
                     }
                 </li>
@@ -72,6 +76,7 @@ export const Tasks = () => {
                     : <>
                         <Checkbox id={task.task_id} setArchivedTaskID = {setArchivedTaskID} taskDesc={task.task_desc} />
                         <span>{task.task_desc}</span>
+                        <span class="badge badge-info float-right" style = {label_style}>{task.date}</span>
                     </>
                     }
                     </li>

@@ -67,6 +67,7 @@ export const Login = (props) => {
             </div> 
         </form>
         <p className="text-center"><NavLink to = "/register">Register</NavLink></p>
+        <p className="text-center"><NavLink to = "/update_password">Forgot Password?</NavLink></p>
     </div>
       
     )

@@ -32,7 +32,7 @@ export const Subject = ({subject}) => {
                     {showConfirm && (
                         <div className="project-delete-modal">
                             <span className="project-delete-modal__inner">
-                            <p>Are you sure you want to delete this project?</p>
+                            <p>Are you sure you want to delete this subject?</p>
                             <button
                                 type="button"
                                 onClick={() => deleteSubject(subject.subject_id)}

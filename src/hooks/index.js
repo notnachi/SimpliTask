@@ -34,9 +34,9 @@ export const useTasks = selectedSubject => {
               if(item.date === moment().format('DD/MM/YYYY'))
                   return item
           }))
-          : selectedSubject === 'INBOX' || selectedSubject === 0
+          : selectedSubject === 'TOMORROW' || selectedSubject === 0
           ? (unsubscribe = unsubscribe.filter((item) => {
-              if(item.date === '')
+              if(item.date === moment().add(1, 'day').format('DD/MM/YYYY'))
                   return item
           }))
           : unsubscribe;
@@ -48,7 +48,7 @@ export const useTasks = selectedSubject => {
     someFunction().then((unsubscribe) => {
       setTasks(
 
-        selectedSubject === 'NEXT 7'
+        selectedSubject === 'NEXT_7'
         ? (unsubscribe = unsubscribe.filter((item) => {
             if(moment(item.date, 'DD-MM-YYYY').diff(moment(), 'days') <= 7 && moment(item.date, 'DD-MM-YYYY').diff(moment(), 'days') >= 0 && item.archived !== true)
                 return item

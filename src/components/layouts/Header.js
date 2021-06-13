@@ -1,7 +1,9 @@
 import React, {useState} from 'react'
 import { FaSignOutAlt } from 'react-icons/fa';
+import { FaUserCog } from 'react-icons/fa';
 import { AddTask } from '../AddTask';
 import { resetUserSession } from '../../auth/authService';
+import {NavLink} from 'react-router-dom'
 
 export const Header = (props) => {
     const [shouldShowMain, setShouldShowMain] = useState(false);
@@ -25,9 +27,9 @@ export const Header = (props) => {
             </div>
             <div className="settings">
             <ul>
-                {/* <li className="settings__add">
-                    <img src="/images/fish.jpg" className = "rounded" alt="" />
-                </li> */}
+                <li className="settings__add">
+                <NavLink to = "/change_password"><FaUserCog /></NavLink>
+                </li>
                 <li className="settings__darkmode">
                 <button
                     data-testid="dark-mode-action"
