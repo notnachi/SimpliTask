@@ -1,8 +1,12 @@
 import React, {useState} from 'react'
 import '../Form.css'
 import {NavLink} from 'react-router-dom'
+import {APIURL, APIKey} from '../constants'
+import axios from 'axios'
 
-export const UpdatePassword = () => {
+export const UpdatePassword = (props) => {
+
+    const changePasswordURL = APIURL + 'changepassword'
 
     const [username, setUsername] = useState('');
     const [newPassword, setNewPassword] = useState('');
@@ -12,13 +16,41 @@ export const UpdatePassword = () => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        console.log("form submitted");
+        
+
+        const requestConfig = {
+            headers: {
+                'x-api-key': APIKey
+            }
+        }
+
+        const requestBody = {
+            username: username,
+            newPassword: newPassword
+        }
+
+
+        axios.post(changePasswordURL, requestBody, requestConfig).then(response => {
+            props.history.push('/login');
+        }).catch((error) => {
+            if(error.response.status === 401 || error.response.status === 403){
+                setMessage(error.response.data.message);
+            } else{
+                setMessage('sorry some issue with the server');
+            }
+        })
+
+        
+
     }
     return (
 
 
         <div className="login-form">
         <form onSubmit = {submitHandler}>
+            <div className="img-div">
+                <img src="/images/to-do.png" alt="Todoist" />
+            </div>
             <h2 className="text-center">Change Password</h2>     
             <div className="form-group">
                 <input type="text" value = {username} onChange = {e => setUsername(e.target.value)} className="form-control" placeholder="Enter username" required="required" />

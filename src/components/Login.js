@@ -50,8 +50,12 @@ export const Login = (props) => {
 
     return (
 
-    <div className="login-form">
+    <div className="login-form justify-content-center">
         <form onSubmit = {submitHandler}>
+            <div className="img-div">
+                <img src="/images/to-do.png" alt="Todoist" />
+            </div>
+            
             <h2 className="text-center">Log in</h2>       
             <div className="form-group">
                 <input type="text" value = {username} onChange = {e => setUsername(e.target.value)}  className="form-control" placeholder="Username" required="required" />

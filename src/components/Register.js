@@ -57,6 +57,9 @@ export const Register = (props) => {
 
         <div className="login-form">
         <form onSubmit = {submitHandler}>
+            <div className="img-div">
+                <img src="/images/to-do.png" alt="Todoist" />
+            </div>
             <h2 className="text-center">Register</h2>     
             <div className="form-group">
                 <input type="text" value = {name} onChange = {e => setName(e.target.value)}  className="form-control" placeholder="Name" required="required" />

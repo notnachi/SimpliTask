@@ -260,6 +260,7 @@
      position: fixed;
      overflow-x: hidden;
      overflow-y: hidden;
+     margin-left: 250px;
      border-right: $generic-border;
      background-color: #fafafa;
    
@@ -468,7 +469,7 @@
    .tasks {
      width: 656px;
      background-color: white;
-     margin-left: 266px;
+     margin-left: 600px;
      border-right: $generic-border;
      min-height: calc(100vh);
      vertical-align: top;
@@ -526,12 +527,6 @@
            display: block;
            border: 1px solid gray;
            border-radius: 16px;
-         }
-
-         .badge {
-
-          color: black;
-           
          }
        }
      }
